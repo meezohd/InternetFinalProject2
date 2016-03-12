@@ -1,9 +1,12 @@
 <template name="menu">
     <ul class="homeNav">
-        <li><a href="/Leagues">Leagues</a></li>
-        <li><a href="/Clubs">Clubs</a></li>
-        <li><a href="/Players">Players</a></li>
-        <li><a href="/Nations">Nations</a></li>
-        <li><a href="/Admin">Admin</a></li>
+        <li><a href="{{pathFor 'leagues'}}">Leagues</a></li>
+        <li><a href="{{pathFor 'clubs'}}">Clubs</a></li>
+        <li><a href="{{pathFor 'players'}}">Players</a></li>
+        <li><a href="{{pathFor 'nations'}}">Nations</a></li>
+        <li><a href="{{pathFor 'admin'}}">Admin</a></li>
+        <li><a href="{{pathFor 'login'}}">Login</a></li>
+        <li><a href="{{pathFor 'register'}}">Register</a></li>
+
     </ul>
 </template>
