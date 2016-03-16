@@ -1,4 +1,13 @@
 <template name="leagues">
     <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
-    <h1>Leagues</h1>
+    {{#each leagues}}
+        <div><a href="/Leagues/{{_id}}" >{{league_name}}</a></div>
+    {{/each}}
+</template>
+
+<template name="leaguePage">
+    <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
+    {{#each clubs}}
+        <div><a href="/Clubs/{{_id}}" >{{club_name}}</a></div>
+    {{/each}}
 </template>
