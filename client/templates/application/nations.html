@@ -1,4 +1,13 @@
 <template name="nations">
     <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
-    <h1>Nations</h1>
+    {{#each nations}}
+        <div><a href="/Nations/{{_id}}" >{{nation_name}}</a></div>
+    {{/each}}
+</template>
+
+<template name="nationPage">
+    <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
+    {{#each players}}
+        <div><a href="/Players/{{_id}}" >{{player_name}}</a></div>
+    {{/each}}
 </template>

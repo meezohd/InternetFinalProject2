@@ -9,6 +9,15 @@ if (Leagues.find().count() === 0){
         league_picture : "/image/img.png" ,
     });
 
+    var nation1 = Nations.insert({
+        nation_name : "Spain" ,
+        nation_picture : "/image/img.png" ,
+    });
+
+    var nation2 = Nations.insert({
+        nation_name : "Canada" ,
+        nation_picture : "/image/img.png" ,
+    });
 
 
     var club1 = Clubs.insert({
@@ -23,9 +32,8 @@ if (Leagues.find().count() === 0){
     });
 
 
-
     Players.insert({
-        player_nation_id : 1 ,
+        player_nation_id : nation1 ,
         player_club_id : club1 ,
         player_name : "Messi" ,
         player_birthday : "1990" ,
@@ -37,7 +45,7 @@ if (Leagues.find().count() === 0){
     });
 
     Players.insert({
-        player_nation_id : 1 ,
+        player_nation_id : nation2 ,
         player_club_id : club1 ,
         player_name : "Ronaldo" ,
         player_birthday : "1990" ,
@@ -49,7 +57,7 @@ if (Leagues.find().count() === 0){
     });
 
     Players.insert({
-        player_nation_id : 1 ,
+        player_nation_id : nation1 ,
         player_club_id : club2 ,
         player_name : "ibrahimovic" ,
         player_birthday : "1990" ,
@@ -61,7 +69,7 @@ if (Leagues.find().count() === 0){
     });
 
     Players.insert({
-        player_nation_id : 1 ,
+        player_nation_id : nation2 ,
         player_club_id : club2 ,
         player_name : "Neymar" ,
         player_birthday : "1990" ,

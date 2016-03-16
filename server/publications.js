@@ -6,6 +6,14 @@ Meteor.publish('leaguePage', function(league_id) {
 });
 
 
+Meteor.publish('nations', function() {
+    return Nations.find();
+});
+Meteor.publish('nationPage', function(nation_id) {
+    return Players.find({player_nation_id: nation_id});
+});
+
+
 Meteor.publish('clubs', function() {
     return Clubs.find();
 });
