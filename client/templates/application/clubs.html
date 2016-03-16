@@ -1,4 +1,13 @@
 <template name="clubs">
     <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
-    <h1>Clubs</h1>
+    {{#each clubs}}
+        <div><a href="/Clubs/{{_id}}" >{{club_name}}</a></div>
+    {{/each}}
+</template>
+
+<template name="clubPage">
+    <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
+    {{#each players}}
+        <div><a href="/Players/{{_id}}" >{{player_name}}</a></div>
+    {{/each}}
 </template>
