@@ -28,3 +28,13 @@ Meteor.publish('players', function() {
 Meteor.publish('playerPage', function(id) {
     return Players.find(id);
 });
+
+
+
+
+
+Meteor.publish("userData", function() {
+    if (Roles.userIsInRole(this.userId, 'admin')) {
+        return Meteor.users.find();
+    }
+})

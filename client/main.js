@@ -6,3 +6,4 @@ Meteor.startup(function() {
         document.title = Session.get('documentTitle');
     });
 });
+
