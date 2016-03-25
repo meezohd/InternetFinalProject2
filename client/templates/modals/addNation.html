@@ -1,0 +1,54 @@
+<template name="addNation">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-default navbar-btn admin nationClick" data-toggle="modal" data-target="#addNation">Add Nation</button><br />
+
+    <!-- Modal -->
+    <div class="modal fade" id="addNation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Nation</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal addNation">
+                        <div class="form-group">
+                            <label for="addNation" class="col-sm-6 control-label">Add Nation Name!:</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="addLeague" name="addNation" placeholder="Username" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addLeaguePicture" class="col-sm-6 control-label">Add Nation Picture!:</label>
+                            <div class="col-sm-6">
+                                <select name="addNationPicture">
+                                    {{#each nation}}
+                                        {{> nationPictures}}
+                                    {{/each}}
+
+                                </select>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default" value="addNation">Continue</button>
+
+                            </div>
+                        </div>
+                    </form>
+                    {{> flashMessages}}
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button Model End -->
+
+</template>

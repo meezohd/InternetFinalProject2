@@ -1,34 +1,34 @@
-<template name="removeUser">
+<template name="removeLeague">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-default navbar-btn admin" data-toggle="modal" data-target="#removeUser">Remove User</button><br />
+    <button type="button" class="btn btn-default navbar-btn admin leagueClick" data-toggle="modal" data-target="#removeLeague">Remove League</button><br />
 
     <!-- Modal -->
-    <div class="modal fade" id="removeUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="removeLeague" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Remove User</h4>
+                    <h4 class="modal-title" id="myModalLabel">Remove League</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal removeUser">
+                    <form class="form-horizontal removeLeague">
                         <div class="form-group">
-                            <label for="removeUser" class="col-sm-6 control-label">Remove This User!:</label>
+                            <label for="removeLeague" class="col-sm-6 control-label">Remove This League!:</label>
                             <div class="col-sm-6">
-                                <select name="removeUser">
-                                    {{#each normalUsers}}
-                                        {{> userItem}}
+                                <select name="removeLeague">
+                                    {{#each league}}
+                                        {{> leagueItem}}
                                     {{/each}}
 
                                 </select>
-                                <!--<input type="text" class="form-control" id="removeUser" name="removeUser" placeholder="Username" required>-->
+
                             </div>
                         </div>
 
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default" value="removeUser">Continue</button>
+                                <button type="submit" class="btn btn-default" value="removeLeague">Continue</button>
 
                             </div>
                         </div>
@@ -44,6 +44,8 @@
         </div>
     </div>
     <!-- Button Model End -->
+
+
 
 
 </template>

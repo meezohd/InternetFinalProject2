@@ -25,6 +25,21 @@ Meteor.methods({
     },
     'changeUserPassword' : function(userName, password){
         Accounts.setPassword(userName, password);
+    },
+    'addAdmin' : function(userId){
+        Roles.addUsersToRoles(userId, ['admin']);
+    },
+    'deleteLeague' : function(leagueId){
+        Leagues.remove(leagueId);
+    },
+    'addLeague' : function(leagueName, leaguePicture){
+        Leagues.insert({league_name : leagueName, league_picture : leaguePicture});
+    },
+    'deleteNation' : function(nationId){
+        Nations.remove(nationId);
+    },
+    'addNation' : function(nationName, nationPicture){
+        Nations.insert({nation_name : nationName, nation_picture: nationPicture});
     }
 
 
