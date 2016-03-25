@@ -40,6 +40,12 @@ Meteor.methods({
     },
     'addNation' : function(nationName, nationPicture){
         Nations.insert({nation_name : nationName, nation_picture: nationPicture});
+    },
+    'deleteClub' : function(clubId){
+        Clubs.remove(clubId);
+    },
+    'addClub' : function(clubName, clubLeagueId, clubPicture){
+        Clubs.insert({club_name : clubName, club_league_id : clubLeagueId, club_picture: clubPicture});
     }
 
 

@@ -4,13 +4,19 @@
 Template.removeClub.events({
     'submit form': function(event){
         event.preventDefault();
-        var removeClub = event.target.removeLeague.value;
+        var removeClub = event.target.removeClub.value;
 
         if(Clubs.findOne(removeClub)==null){
             FlashMessages.sendWarning("That Club Doesn't exist!");
         }else{
-            //Meteor.call('deleteClub', removeClub);
-            FlashMessages.sendSuccess("Sucessfully Removed Club!");
+            if(Leagues.findOne(Clubs.findOne(removeClub).club_league_id) !=null){
+                FlashMessages.sendWarning("This Club is still tied to A League. Please remove League First!!");
+            }
+            else{
+                Meteor.call('deleteClub', removeClub);
+                FlashMessages.sendSuccess("Sucessfully Removed Club!");
+
+            }
         }
     }
 
