@@ -1,9 +1,20 @@
 <template name="commentItem">
 
-    <h1> The user name is {{comment_user_name}}</h1>
-    <h1> comment was dated on {{comment_date}}</h1>
-
-    <h1>The comment message was {{comment_msg}}</h1>
 
 
+    <h1> Comment made by user :  {{comment_user_name}}</h1>
+    <h1> {{comment_date}}</h1>
+    <h1>Comment Message : {{comment_msg}}</h1>
+
+    {{#if userMadeComment}}
+        <form class="commentItem" >
+            <input type="hidden" name="removeCommentId" size="20" value="{{id}}"/>
+            <input class="CommentButton" type="submit" name="action" value="Remove"/>
+        </form>
+
+        {{>editComment}}
+
+
+    {{/if}}
+    <br/><br/><br/>
 </template>

@@ -52,6 +52,12 @@ Meteor.methods({
     },
     'getUserName' : function(userId){
         return Meteor.users.findOne(userId).username;
+    },
+    'removeComment' : function(commentId){
+        Comments.remove(commentId);
+    },
+    'editComment' : function(commentId, commentMessage, commentDate){
+        Comments.update({_id: commentId}, {$set : {comment_name : commentMessage, comment_date: commentDate}});
     }
 
 

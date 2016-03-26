@@ -8,10 +8,13 @@
 
 <template name="playerPage">
     <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
+    {{> flashMessages}}
     {{#each players}}
         <h1>{{player_name}} - {{player_number}}</h1>
     {{/each}}
+<br/><br/><br/>
 
+    
     {{#each comments}}
         {{>commentItem}}
     {{/each}}

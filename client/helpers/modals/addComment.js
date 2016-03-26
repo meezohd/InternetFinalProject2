@@ -30,15 +30,16 @@ Template.addComment.events({
         }
         else{
             var userId = Meteor.users.findOne()._id; // make Id here b/c can't find it if not logged in.
-            console.log(userId);
-            console.log(playerId);
-            FlashMessages.sendWarning("Sucessfully Added Comment");
+            //console.log(userId);
+            //console.log(playerId);
             var d = new Date();
             var month = d.getMonth()+1;
-            var date = d.getFullYear()+"-"+ month+"-"+ d.getDate();
-            var date = date.toString();
-            console.log(date);
+            var date = d.getFullYear()+"-"+ month+"-"+ d.getDate()+" @ "+ d.toTimeString();
+            date = "Comment made on "+ date.toString();
+            //console.log(date);
             Meteor.call('addComment', userId, playerId, addComment, date);
+            $("#addComment").modal('hide');
+            FlashMessages.sendInfo("Sucessfully Added Comment");
         }
 
     }
