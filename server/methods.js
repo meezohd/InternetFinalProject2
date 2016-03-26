@@ -46,6 +46,12 @@ Meteor.methods({
     },
     'addClub' : function(clubName, clubLeagueId, clubPicture){
         Clubs.insert({club_name : clubName, club_league_id : clubLeagueId, club_picture: clubPicture});
+    },
+    'addComment' : function(userId, playerId, comment, date){
+        Comments.insert({comment_user_id : userId, comment_player_id : playerId, comment_name : comment, comment_date: date});
+    },
+    'getUserName' : function(userId){
+        return Meteor.users.findOne(userId).username;
     }
 
 

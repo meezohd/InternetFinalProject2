@@ -8,6 +8,17 @@
 
 <template name="playerPage">
     <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
-    <h1>{{player_name}} - {{player_number}}</h1>
+    {{#each players}}
+        <h1>{{player_name}} - {{player_number}}</h1>
+    {{/each}}
 
+    {{#each comments}}
+        {{>commentItem}}
+    {{/each}}
+
+
+
+
+
+{{> addComment}}
 </template>

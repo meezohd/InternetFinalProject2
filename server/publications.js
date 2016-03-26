@@ -28,6 +28,12 @@ Meteor.publish('players', function() {
 Meteor.publish('playerPage', function(id) {
     return Players.find(id);
 });
+Meteor.publish('comments', function(){
+   return Comments.find();
+});
+Meteor.publish('playersComments' , function(id){
+    return Comments.find({comment_player_id: id});
+});
 
 
 
