@@ -1,10 +1,19 @@
-/* Template.search.helpers({
-
+Tracker.autorun(function() {
+    if (Session.get('playersSearchQuery'))
+        Meteor.subscribe('playersSearch', Session.get('playersSearchQuery'));
 });
 
-Tracker.autorun(function () {
-   var cursor = PlayersIndex.search('ronaldo');
+Template.index.events({
+    'keyup [type=text]': function(event, template) {
+        Session.set('playersSearchQuery', event.target.value);
+    }
+});
 
-    console.log(cursor.fetch());
-    console.log(cursor.count());
-}); */
+Template.index.helpers({
+    searchResults: function() {
+        return Players.search(Session.get('playersSearchQuery'));
+    },
+    playersSearchQuery: function() {
+        return Session.get('playersSearchQuery');
+    }
+});
