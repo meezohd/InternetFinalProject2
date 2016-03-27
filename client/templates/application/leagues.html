@@ -1,13 +1,78 @@
 <template name="leagues">
-    <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
-    {{#each leagues}}
-        <div><a href="/Leagues/{{_id}}" >{{league_name}}</a></div>
-    {{/each}}
+    <div class="container-fluid">
+        <div class="text-center" style="background-color:#BE1418;width:100%;border-bottom: #960C0F solid 5px;border-top: #960C0F solid 5px;margin-top: 100px">
+            <div style="margin: 0 auto;width:1000px;">
+
+                <div class="row container" style="display: table;">
+                    <div class="col-sm-9 col-md-8 col-lg-9" style="float: none;display: table-cell;vertical-align: top;">
+                        <div class="row">
+
+                            {{#each leagues}}
+                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-15" style="margin: 5px 0 5px 3px;">
+                                    <div class="url_box" style="width:173px;height:180px;">
+                                        <a href="{{pathFor 'leaguePage'}}">
+                                            <div>
+                                                <img src="/images/leagues/{{league_picture}}" style="width:128px;height:128px">
+                                                <h1>{{league_name}}</h1>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            {{/each}}
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </template>
 
+
 <template name="leaguePage">
-    <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
-    {{#each clubs}}
-        <div><a href="/Clubs/{{_id}}" >{{club_name}}</a></div>
-    {{/each}}
+    <div class="row container" style="display: table;">
+        <div class="col-sm-3 col-md-4 col-lg-3" style="color:#fff;height:100%;;background-color: #2E2E2E;float: none;display: table-cell;">
+            <div class="row text-center" style="min-height: 200px;border-bottom: #BD1418 solid 5px;background-color: #fff">
+                <img src="/images/leagues/leaguePicture" style="width:180px;height:180px;">
+            </div>
+
+
+            <div class="row" style="border-left: #515151 solid 0px;height: 100vh;">
+                <!-- Clubs Table -->
+                <div class="table-responsive">
+                    <div class="table_title">Clubs</div>
+                    {{#each clubs}}
+                        <div><a href="" ></a></div>
+
+                        <div class="url_table">
+                            <a href="{{pathFor 'clubPage'}}">
+                                <div>
+                                    <img src="/images/clubs/{{club_picture}}" style="width:16px;height:16px">
+                                    <h2>{{club_name}}</h2>
+                                </div>
+                            </a>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-9 col-md-8 col-lg-9" style="float: none;display: table-cell;vertical-align: top;width: 100%">
+            <div class="row" style="background-color: #BD1418;min-height: 200px;border-bottom: #850E11 solid 5px;padding: 5% 0 0 2%;margin-bottom: 10px;">
+                <div>
+                    <h1 style="font-size: 80px;">clubLeagueName</h1>
+                </div>
+            </div>
+
+            <div class="row" style="float:left">
+                {{>playerCard}}
+            </div>
+
+
+        </div>
+
+    </div>
+
 </template>

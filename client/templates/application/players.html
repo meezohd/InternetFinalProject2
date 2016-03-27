@@ -1,27 +1,108 @@
 <template name="players">
-    <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
+    <div class="container-fluid" style="margin: 30px 0 10px 0">
 
-        {{#each players}}
-        <div><a href="/Players/{{_id}}" >{{player_name}}</a></div>
-        {{/each}}
+        <div class="row " style="display: table;">
+
+            <div class="col-sm-9 col-md-8 col-lg-11" style="float: none;display: table-cell;vertical-align: top;">
+
+                <div class="row">
+                    {{#each players}}
+                        {{>playerCard}}
+                    {{/each}}
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
 </template>
 
 <template name="playerPage">
-    <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
-    {{> flashMessages}}
+
+    <br />
+
     {{#each players}}
-        <h1>{{player_name}} - {{player_number}}</h1>
-    {{/each}}
-<br/><br/><br/>
+        <div class="container">
 
-    
-    {{#each comments}}
+            <div class="row">
+
+                <div class="col-md-2 text-right">
+                    <img src="/images/players/{{player_picture}}" style="position: relative;z-index:101;bottom: -25px;left:4%;width:100px;height:100px">
+                </div>
+
+                <div class="col-md-6">
+                    <h1 class="single-title" style="position: relative;top:35px">
+                        <img src="/images/nations/playerNationPicture" alt="" style="width:45px;height:25px">
+                        {{player_name}}
+                    </h1>
+                </div>
+
+                <div class="col-md-3">
+                    <ul class="nav nav-tabs" style="position: relative;top:58px">
+                        <li class="active career"><a href="#about" role="tab" data-toggle="tab">About</a></li>
+                        <li class="career"><a href="#career" role="tab" data-toggle="tab">Career</a></li>
+                        <li class="career" ><a href="#news" role="tab" data-toggle="tab">News</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="background-color: #fff;padding:10px;border-bottom: #BD1418 solid 5px;border-top: #BD1418 solid 8px;position: relative;z-index:100;">
+            <div class="container" style="padding: 0;">
+                <div style="position: relative;top:-18px;left:4%;background: url(/images/player-background.jpg) no-repeat;height:37px; width:160px;"></div>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <img src="/images//clubs/playerClubPicture" style="width:225px;height:225px">
+                    </div>
+                    <div class="col-md-9 tab-content">
+                        <div class="row tab-pane fade in active" id="about">
+
+                            <div class="row" style="padding-bottom:1px;border-bottom: #E7E7E7 solid 1px;margin: 0px 0 20px 0;">
+                                <div class="col-md-6">Club: playerClub</div>
+                                <div class="col-md-6">Nation: playerNation</div>
+                            </div>
+
+                            <div class="row" style="padding-bottom:1px;border-bottom: #E7E7E7 solid 1px;margin: 10px 0 20px 0;">
+                                <div class="col-md-6">Birthday: {{player_birthday}}</div>
+                                <div class="col-md-6">Position: {{player_position}}</div>
+                            </div>
+
+                            <div class="row" style="padding-bottom:1px;border-bottom: #E7E7E7 solid 1px;margin: 10px 0 20px 0;">
+                                <div class="col-md-6">Number: {{player_number}}</div>
+                                <div class="col-md-6">Height: {{player_height}}</div>
+                            </div>
+
+                            <div class="row" style="padding-bottom:1px;border-bottom: #E7E7E7 solid 1px;margin: 10px 0 20px 0;">
+                                <div class="col-md-6">Foot: {{player_foot}}</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row tab-pane fade" id="career">
+                            <div class="row" style="padding-bottom:1px;border-bottom: #E7E7E7 solid 1px;margin: 0px 0 20px 0;">Career Coming Soon !</div>
+                        </div>
+
+                        <div class="row tab-pane fade" id="news">
+                            <div class="row" style="padding-bottom:1px;border-bottom: #E7E7E7 solid 1px;margin: 0px 0 20px 0;">
+                                News Coming Soon !
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+
+    <br />
+    {{> flashMessages}}
+
+    <br />
         {{>commentItem}}
-    {{/each}}
 
-
-
-
-
-{{> addComment}}
+    {{> addComment}}
 </template>

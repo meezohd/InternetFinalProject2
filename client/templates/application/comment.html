@@ -1,0 +1,39 @@
+<template name="commentItem">
+    <div style="background-color: #fff;padding:10px;border-bottom: #BD1418 solid 5px;border-top: #BD1418 solid 8px;">
+        <div class="container" style="padding: 0;">
+            {{#each comments}}
+            <div class="col-md-12">
+
+                <!-- <h2 style=" text-align: center;"> No comments yet! be the first one to comment ...</h2>-->
+
+                <div class="row">
+                    <div class="row" style="padding:4px;background-color: #D9D9D9;border-radius: 10px;">
+                        <div class="col-md-8" style="font-weight: bold">> {{comment_user_name}}</div>
+                        <div class="col-md-4" style="text-align: right">({{comment_date}})</div>
+                    </div>
+
+                    <div class="row" style="border-bottom: #D9D9D9 solid 5px;padding:10px; background-color: #E8E8E8;margin: 0 auto;">
+                        <div class="col-md-10">{{comment_msg}}</div>
+                        <div class="col-md-2" style="text-align: right">
+                            {{#if userMadeComment}}
+                                <form class="commentItem" >
+                                    <input type="hidden" name="removeCommentId" size="20" value="{{id}}"/>
+                                    <input class="CommentButton" type="submit" name="action" value="Remove"/>
+                                </form>
+
+                                {{>editComment}}
+
+                            {{/if}}
+
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+
+    </div>
+    <br/><br/><br/>
+</template>

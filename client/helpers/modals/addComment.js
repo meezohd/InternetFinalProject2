@@ -33,11 +33,8 @@ Template.addComment.events({
             //console.log(userId);
             //console.log(playerId);
             var d = new Date();
-            var month = d.getMonth()+1;
-            var date = d.getFullYear()+"-"+ month+"-"+ d.getDate()+" @ "+ d.toTimeString();
-            date = "Comment made on "+ date.toString();
             //console.log(date);
-            Meteor.call('addComment', userId, playerId, addComment, date);
+            Meteor.call('addComment', userId, playerId, addComment, d.toUTCString());
             $("#addComment").modal('hide');
             FlashMessages.sendInfo("Sucessfully Added Comment");
         }
