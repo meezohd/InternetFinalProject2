@@ -36,9 +36,6 @@ Meteor.publish('playersComments' , function(id){
 });
 
 
-
-
-
 Meteor.publish("userData", function() {
     if (Roles.userIsInRole(this.userId, 'admin')) {
         return Meteor.users.find();

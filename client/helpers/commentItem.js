@@ -1,16 +1,3 @@
-/**
- * Created by Justin on 3/26/2016.
- */
-Template.commentItem.events({
-    'submit form': function(event) {
-        event.preventDefault();
-        var commentId = event.target.removeCommentId.value;
-        console.log(commentId);
-        Meteor.call('removeComment', commentId);
-    }
-});
-
-
 Template.commentItem.helpers({
     comment_user_name: function(){
         var userId = this.comment_user_id;
@@ -33,9 +20,24 @@ Template.commentItem.helpers({
             return false;
         }
     },
+    noComment: function(){
+        if(Comments.find({comment_player_id: Router.current().params._id}).count() === 0){
+            return true;
+        }
+        return false;
+    },
     id: function(){
         return this._id;
     }
 
 
+});
+
+Template.commentItem.events({
+    'submit form': function(event) {
+        event.preventDefault();
+        var commentId = event.target.removeCommentId.value;
+        console.log(commentId);
+        Meteor.call('removeComment', commentId);
+    }
 });

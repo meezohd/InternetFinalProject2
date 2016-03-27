@@ -3448,6 +3448,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.career > a {
     color:#00A76B;
     background-color: #fff;
+    border: 0 !important;
 
 }
 
@@ -3456,7 +3457,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:focus {
     color: #fff;
     background-color: #BD1418;
-    cursor: pointer
+    cursor: pointer;
+    border: 0 !important;
 }
 .nav-tabs.nav-justified {
     width: 100%;
@@ -6797,6 +6799,7 @@ blockquote.pull-left {
     }
     .container-fluid {
         max-width: 100%;
+        padding: 0 !important;
         margin-right: 0 !important;
         margin-left:0 !important;
     }
