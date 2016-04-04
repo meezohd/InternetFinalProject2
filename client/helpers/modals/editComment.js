@@ -25,11 +25,7 @@ Template.editComment.events({
         var commentEditUser = event.target.editCommentUser.value;
         var commentMessage = event.target.editComment.value;
         var d = new Date();
-        var month = d.getMonth()+1;
-        var date = d.getFullYear()+"-"+ month+"-"+ d.getDate()+" @ "+ d.toTimeString();
-        date = "Comment Edited by: "+commentEditUser+ " on "+ date.toString();
-
-        Meteor.call('editComment', commentId, commentMessage, date);
+        Meteor.call('editComment', commentId, commentMessage, d.toUTCString());
         FlashMessages.sendInfo("You have Sucessfully Edited the Comment!");
         $("#editComment"+commentId).modal('hide');
     }
