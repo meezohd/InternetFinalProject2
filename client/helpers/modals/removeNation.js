@@ -14,6 +14,8 @@ Template.removeNation.events({
         }
     }
 });
+
+//helpers for populating select options of Nations.
 Template.removeNation.helpers({
     nation: function() {
         return Nations.find();

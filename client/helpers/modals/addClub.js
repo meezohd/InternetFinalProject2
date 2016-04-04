@@ -19,6 +19,8 @@ Template.addClub.events({
     }
 
 });
+
+//helpers used to return option lists
 Template.addClub.helpers({
     league: function() {
         return Leagues.find();
@@ -43,7 +45,7 @@ Template.clubPictures.helpers({
         return this.name;
     }
 });
-
+//Used to validate forms
 Template.addClub.onRendered(function(){
     $('.addClub').validate({
         rules: {

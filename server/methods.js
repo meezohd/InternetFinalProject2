@@ -1,6 +1,11 @@
 /**
  * Created by Justin on 3/24/2016.
  */
+
+
+/*
+A Big file containing all the methods we need to be executed only on the server side by using appropriate client calls.
+ */
 Meteor.methods({
    'deleteUser' : function(userId){
        Meteor.users.remove(userId);

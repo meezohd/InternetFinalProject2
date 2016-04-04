@@ -14,6 +14,8 @@ Template.removeLeague.events({
         }
     }
 });
+
+//helpers in populating select options of leagues in database.
 Template.removeLeague.helpers({
     league: function() {
         return Leagues.find();

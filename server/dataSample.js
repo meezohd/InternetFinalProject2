@@ -1,3 +1,8 @@
+/*
+One big hard coded data sample. Values were extracted from part 1 of the project using a java program to parse information
+into JS variables and inserting the information into MongoDB.
+*/
+
 if (Leagues.find().count() === 0){
     var league1 = Leagues.insert({
         league_name : "Barclays PL",

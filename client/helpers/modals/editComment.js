@@ -1,6 +1,7 @@
 /**
  * Created by Justin on 3/26/2016.
  */
+//rules set for editing comments.
 Template.editComment.onRendered(function(){
     $('.editComment').validate({
         rules:{
@@ -31,7 +32,7 @@ Template.editComment.events({
     }
 });
 
-
+//Helper to extract information of a specific comment.
 Template.editComment.helpers({
     id: function(){
         return this._id;

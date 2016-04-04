@@ -21,6 +21,8 @@ Template.removeClub.events({
     }
 
 });
+
+//helpers to populate select options in removing clubs.
 Template.removeClub.helpers({
     club: function() {
         return Clubs.find();
