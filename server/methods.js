@@ -58,6 +58,14 @@ Meteor.methods({
     },
     'editComment' : function(commentId, commentMessage, commentDate){
         Comments.update({_id: commentId}, {$set : {comment_name : commentMessage, comment_date: commentDate}});
+    },
+    'removePlayer' : function(playerId){
+        Players.remove(playerId);
+    },
+    'addPlayer' : function(playerName, playerNation, playerClub, playerPicture, playerNumber, playerHeight, playerBirthday,
+    playerPosition, playerFoot){
+        Players.insert({player_nation_id : playerNation, player_club_id : playerClub, player_name : playerName, player_birthday : playerBirthday,
+        player_picture: playerPicture, player_position : playerPosition, player_height: playerHeight, player_number: playerNumber, player_foot : playerFoot});
     }
 
 

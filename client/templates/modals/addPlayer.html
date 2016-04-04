@@ -1,0 +1,120 @@
+<template name="addPlayer">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-default navbar-btn admin " data-toggle="modal" data-target="#addPlayer">Add Player</button><br />
+
+    <!-- Modal -->
+    <div class="modal fade" id="addPlayer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Player</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal addPlayer">
+                        <div class="form-group">
+                            <label for="addPlayer" class="col-sm-6 control-label">Add Player's Name!:</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="addPlayer" name="addPlayer" placeholder="Player Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="playerNation" class="col-sm-6 control-label">Pick A Nation for Player!:</label>
+                            <div class="col-sm-6">
+                                <select name="playerNation">
+                                    {{#each nation}}
+                                        {{> nationItem}}
+                                    {{/each}}
+
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="playerClub" class="col-sm-6 control-label">Pick A Club for Player!:</label>
+                            <div class="col-sm-6">
+                                <select name="playerClub">
+                                    {{#each club}}
+                                        {{> clubItem}}
+                                    {{/each}}
+
+                                </select>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="addPlayerPicture" class="col-sm-6 control-label">Add Player Picture!:</label>
+                            <div class="col-sm-6">
+                                <select name="addPlayerPicture">
+                                    {{#each player}}
+                                        {{> playerPictures}}
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addPlayerNumber" class="col-sm-6 control-label">Add Player's Number!:</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="addPlayerNumber" name="addPlayerNumber" placeholder="Player Number" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addPlayerHeight" class="col-sm-6 control-label">Add Player's Height!:</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="addPlayerHeight" name="addPlayerHeight" placeholder="Player Height" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addPlayerBirthday" class="col-sm-6 control-label">Add Player's Birthday!:</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="addPlayerBirthday" name="addPlayerBirthday" placeholder="Player Birthday" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addPlayerPosition" class="col-sm-6 control-label">Add Player Position!:</label>
+                            <div class="col-sm-6">
+                                <select name="addPlayerPosition">
+                                    {{#each playerPosition}}
+                                        <option name={{position}} value="{{position}}">{{position}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addPlayerFoot" class="col-sm-6 control-label">Add Player Foot!:</label>
+                            <div class="col-sm-6">
+                                <select name="addPlayerFoot">
+                                    {{#each playerFoot}}
+                                        <option name={{foot}} value="{{foot}}">{{foot}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default" value="addClub">Continue</button>
+
+                            </div>
+                        </div>
+                    </form>
+                    {{> flashMessages}}
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button Model End -->
+
+
+
+
+</template>
