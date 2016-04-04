@@ -1,25 +1,30 @@
 <template name="index">
-<div>
-    <div class="text-center">
-        <img src="/images/logo.jpg" style="margin-bottom: 10px;">
-        {{>menu}}
-    </div>
-
-    <div class="text-center" style="background-color:#BE1418; border-top: #960C0F solid 5px;border-bottom: #960C0F solid 5px;padding: 40px 0 40px 0;width:100%">
+    <div>
         <div class="text-center">
-            <form id="searchHome" action="/Search" method="GET" enctype="text/plain">
-                <div style="padding: 10px 0 10px 0;">
-                    <input  class="searchHome" type="text" name="q" id="q" placeholder="Search Your Favorite Player">
-                </div>
-            </form>
+            <img src="/images/logo.jpg" style="margin-bottom: 10px;">
+            {{>menu}}
         </div>
-    </div>
 
-    <div class="text-center" style="background-color:#E8E8E8; border-bottom: #BABABA solid 5px;padding: 10px 0 10px 0;">
-        <!--{{#if username}}-->
-            <!--<h2>Hey {{username}} !</h2>-->
-        <!--{{/if}}-->
-    </div>
+        <div class="text-center" style="background-color:#BE1418; border-top: #960C0F solid 5px;border-bottom: #960C0F solid 5px;padding: 40px 0 40px 0;width:100%">
+            <div class="text-center">
+                <!--<form id="searchHome" action="/Search" method="GET" enctype="text/plain"> </form>-->
+                <div style="padding: 10px 0 10px 0;">
+                    <input  class="searchHome" type="text" placeholder="Search Your Favorite Player" value="{{playersSearchQuery}}">
+                </div>
 
-</div>
+            </div>
+        </div>
+
+        <div class="text-center" style="background-color:#E8E8E8; border-bottom: #BABABA solid 5px;padding: 10px 0 10px 0;">
+            {{#if searchResults.count}}
+                <ul>
+                    {{#each searchResults}}
+                        <li><a style="color:#4d4d4d;" href="{{pathFor 'playerPage'}}"><strong>{{player_name}}</strong></a></li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        </div>
+
+
+    </div>
 </template>

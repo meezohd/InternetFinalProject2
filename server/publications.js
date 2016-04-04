@@ -36,8 +36,13 @@ Meteor.publish('playersComments' , function(id){
 });
 
 
+Meteor.publish('playersSearch', function(query) {
 
+    if (_.isEmpty(query))
+        return this.ready();
 
+    return Players.search(query);
+});
 
 Meteor.publish("userData", function() {
     if (Roles.userIsInRole(this.userId, 'admin')) {

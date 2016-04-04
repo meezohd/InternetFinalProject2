@@ -21,25 +21,24 @@
 <template name="playerPage">
 
     <br />
-
     {{#each players}}
         <div class="container">
 
             <div class="row">
 
                 <div class="col-md-2 text-right">
-                    <img src="/images/players/{{player_picture}}" style="position: relative;z-index:101;bottom: -25px;left:4%;width:100px;height:100px">
+                    <img src="/images/players/{{player_picture}}" style="position: relative;z-index:101;bottom: -25px;left:-2px;width:100px;height:100px">
                 </div>
 
                 <div class="col-md-6">
                     <h1 class="single-title" style="position: relative;top:35px">
-                        <img src="/images/nations/playerNationPicture" alt="" style="width:45px;height:25px">
+                        <img src="/images/nations/{{nationPicture}}" alt="" style="width:45px;height:25px">
                         {{player_name}}
                     </h1>
                 </div>
 
                 <div class="col-md-3">
-                    <ul class="nav nav-tabs" style="position: relative;top:58px">
+                    <ul class="nav nav-tabs" style="position: relative;top:50px">
                         <li class="active career"><a href="#about" role="tab" data-toggle="tab">About</a></li>
                         <li class="career"><a href="#career" role="tab" data-toggle="tab">Career</a></li>
                         <li class="career" ><a href="#news" role="tab" data-toggle="tab">News</a></li>
@@ -55,14 +54,14 @@
                 <div style="position: relative;top:-18px;left:4%;background: url(/images/player-background.jpg) no-repeat;height:37px; width:160px;"></div>
                 <div class="row">
                     <div class="col-md-3 text-center">
-                        <img src="/images//clubs/playerClubPicture" style="width:225px;height:225px">
+                        <img src="/images/clubs/{{clubPicture}}" style="width:225px;height:225px">
                     </div>
                     <div class="col-md-9 tab-content">
                         <div class="row tab-pane fade in active" id="about">
 
                             <div class="row" style="padding-bottom:1px;border-bottom: #E7E7E7 solid 1px;margin: 0px 0 20px 0;">
-                                <div class="col-md-6">Club: playerClub</div>
-                                <div class="col-md-6">Nation: playerNation</div>
+                                <div class="col-md-6">Club: {{clubName}}</div>
+                                <div class="col-md-6">Nation: {{nationName}}</div>
                             </div>
 
                             <div class="row" style="padding-bottom:1px;border-bottom: #E7E7E7 solid 1px;margin: 10px 0 20px 0;">
@@ -100,9 +99,10 @@
 
     <br />
     {{> flashMessages}}
-
     <br />
-        {{>commentItem}}
-
+    <h1 style=" display: inline;"> Comments</h1>
+    <br />
+    {{> addComment}}
+    {{>commentItem}}
     {{> addComment}}
 </template>
