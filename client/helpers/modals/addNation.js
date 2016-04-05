@@ -1,9 +1,3 @@
-/**
- * Created by Justin on 3/25/2016.
- */
-/**
- * Created by Justin on 3/24/2016.
- */
 Template.addNation.events({
     'submit form': function(event){
         event.preventDefault();

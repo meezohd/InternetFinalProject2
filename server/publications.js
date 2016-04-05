@@ -1,3 +1,5 @@
+//publishing data to clint side as autopublish package has been deleted
+
 Meteor.publish('leagues', function() {
     return Leagues.find();
 });
@@ -34,7 +36,6 @@ Meteor.publish('comments', function(){
 Meteor.publish('playersComments' , function(id){
     return Comments.find({comment_player_id: id});
 });
-
 
 Meteor.publish('playersSearch', function(query) {
 

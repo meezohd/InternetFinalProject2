@@ -1,3 +1,7 @@
+/*
+ Code for extracting players details in (players Pages, nations Pages, clubs Pages, leagues Pages) to be passed to template helpers to show them properly.
+ */
+
 Template.playerCard.helpers({
     nationPicture: function(){
         return Nations.findOne(this.player_nation_id).nation_picture;
