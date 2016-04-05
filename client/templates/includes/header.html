@@ -13,9 +13,9 @@
                     <a class="navbar-brand" title="Home" href="{{pathFor 'index'}}">
                         <img src="/images/logo-small.png" alt="shoot 24" style="width:181px;height: 49px;">
                     </a>
-                    <form id="search" action="{{pathFor 'search'}}" method="GET" enctype="text/plain" style="float:  right;">
-                        <div><input class="searchHeader"  type="text" name="q" id="q" placeholder="Search for any player..."></div>
-                    </form>
+                    <div style="float: right;">
+                        <input class="searchHeader"  type="text" placeholder="Search Your Favorite Player" value="{{playersSearchQuery}}">
+                    </div>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-responsive-collapse navbar-right">
@@ -25,6 +25,25 @@
             </div>
         </div>
     </header>
+    <br />
 
-<br />
+        {{#if searchResults.count}}
+        <div style="position: absolute;left:325px;top:60px;background-color: #fff;border: solid #BD1518 3px;z-index: 9999;max-width: 850px; opacity: 0.9;padding: 20px; border-radius: 20px">
+            <div class="row " style="display: table;">
+
+                <div class="col-md-12" style="float: none;display: table-cell;vertical-align: top;">
+
+                    <div class="row" id="searchResult">
+                        {{#each searchResults}}
+                            {{>playerCard}}
+                        {{/each}}
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        {{/if}}
+
 </template>
