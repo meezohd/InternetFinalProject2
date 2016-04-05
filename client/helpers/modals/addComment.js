@@ -1,6 +1,8 @@
 /**
  * Created by Justin on 3/25/2016.
  */
+
+//Used to validate forms
 Template.addComment.onRendered(function(){
     $('.addComment').validate({
         rules:{

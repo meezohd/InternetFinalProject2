@@ -17,7 +17,7 @@ Template.addLeague.events({
         }
     }
 });
-
+//helperse used to populate options with values.
 Template.addLeague.helpers({
     league: function() {
         return leaguePicturesArray;

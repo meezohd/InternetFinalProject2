@@ -1,11 +1,14 @@
 /**
  * Created by Justin on 3/24/2016.
  */
+//helper to grab only users that are not admin
 Template.changePassword.helpers({
     normalUsers: function() {
         return Meteor.users.find({roles:{$ne: 'admin'}}).fetch();
     }
 });
+
+//Setting rules for the change Password modal form.
 Template.changePassword.onRendered(function(){
     $('.changePassword').validate({
         rules:{

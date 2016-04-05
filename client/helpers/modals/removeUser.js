@@ -15,6 +15,8 @@ Template.removeUser.events({
 
     }
 });
+
+//helpers in populating select options of all the users that are NOT admin.
 Template.removeUser.helpers({
    normalUsers: function() {
        return Meteor.users.find({roles:{$ne: 'admin'}}).fetch();

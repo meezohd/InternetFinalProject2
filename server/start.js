@@ -1,4 +1,9 @@
+/*
+File to set up 2 users if there are no users currently in the database. FOR TESTING purpose only
 
+User 1: Admin  Pass: toor123
+User 2: test   Pass: toor123
+ */
 if (Meteor.users.find().count() < 1) {
     // users array
     var users = [

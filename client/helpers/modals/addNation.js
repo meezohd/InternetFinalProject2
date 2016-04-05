@@ -21,7 +21,7 @@ Template.addNation.events({
     }
 
 });
-
+//Helpers used to populate select options
 Template.addNation.helpers({
     nation: function() {
         return nationPicturesArray;

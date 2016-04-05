@@ -34,6 +34,7 @@ Template.addPlayer.events({
     }
 
 });
+//Helpers used to populate select options for inputs in modal
 Template.addPlayer.helpers({
     nation: function() {
         return Nations.find();
@@ -92,7 +93,7 @@ Template.clubItem.helpers({
         return this.nation_name;
     }
 });
-
+//rules set to validate specific forms for AddPlayer.
 Template.addPlayer.onRendered(function(){
     $('.addPlayer').validate({
         rules: {

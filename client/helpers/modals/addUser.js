@@ -1,6 +1,7 @@
 /**
  * Created by Justin on 3/24/2016.
  */
+//rules in validating forms.
 Template.addUser.onRendered(function(){
     $('.addUser').validate({
         rules:{

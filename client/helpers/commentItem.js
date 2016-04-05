@@ -1,3 +1,7 @@
+/*
+Code for extracting comment Items information to be passed to template helpers to render it properly.
+ */
+
 Template.commentItem.helpers({
     comment_user_name: function(){
         var userId = this.comment_user_id;

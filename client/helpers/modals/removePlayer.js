@@ -16,6 +16,8 @@ Template.removePlayer.events({
 
     }
 });
+
+//helper in populating select options of players, sorts them in ascending order a-z.
 Template.removePlayer.helpers({
     normalPlayers: function() {
         return Players.find({}, { sort: { player_name : 1 } });
